@@ -5,11 +5,19 @@ class SlidingWindow {
   }
 
   addNumbers(numbers) {
-    const uniqueNew = numbers.filter((n) => !this.data.includes(n));
-    this.data.push(...uniqueNew);
-    if (this.data.length > this.size) {
-      this.data.splice(0, this.data.length - this.size); // maintain size
+    const newNumbers = [];
+    for (const num of numbers) {
+      if (!this.data.includes(num)) {
+        this.data.push(num);
+        newNumbers.push(num);
+      }
     }
+
+    if (this.data.length > this.size) {
+      this.data = this.data.slice(this.data.length - this.size);
+    }
+
+    return newNumbers;
   }
 
   getData() {

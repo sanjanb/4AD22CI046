@@ -10,7 +10,8 @@ async function fetchNumbersById(id) {
     const response = await axios.get(url, { timeout });
     return response.data.numbers || [];
   } catch (err) {
-    return []; // on error or timeout
+    console.error(`Error fetching from ${path}:`, err.message);
+    return [];
   }
 }
 
