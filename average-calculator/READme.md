@@ -2,7 +2,7 @@
 
 ## Output for http://localhost:9876/numbers/e
 
-![even](assets/even.png)
+![even](assets/Even.png)
 
 ## Output for http://localhost:9876/numbers/primes
 
